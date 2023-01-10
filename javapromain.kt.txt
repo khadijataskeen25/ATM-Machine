@@ -1,0 +1,260 @@
+import java.util.Random;
+import java.util.Scanner;
+class bank extends Login
+{
+    void FZT(String name)
+    {
+        
+        Scanner sc = new Scanner(System.in);
+        name = sc.next();
+    }
+}
+class Login  
+{
+
+  Scanner sc = new Scanner (System.in);
+  private long phone;
+  private long acc;
+  private int pin;
+  public void setphone (long phone)
+  {
+    this.phone = phone;
+  }
+  public long getphone (long phone)
+  {
+      
+           System.out.println("\t\n");
+    System.out.print ("KINDLY ENTER YOUR PHONE NUMBER : ");
+    phone = sc.nextLong ();
+        System.out.println("");
+         System.out.println("\t\n");
+         Random Rand = new Random();
+		int a = Rand.nextInt(9999);
+		System.out.println("THIS IS YOUR HUMAN CAPTCHA : "+a);
+		System.out.println("ENTER THE HUMAN CAPTCHA");
+		int n = sc.nextInt();
+		if(n==a)
+		{
+		    System.out.println("VALID CAPTCHA");
+		     System.out.println("DEAR CUSTOMER,");
+    System.out.println("PHONE NUMBER IS CONFIRMED.");
+    System.out.print ("YOUR PHONE NUMBER IS : "+phone);
+		}
+		else
+		{
+		System.out.println("INVALID CAPTCHA");
+		    System.out.println("PHONE NUMBER IS CONFIRMED.");
+    System.out.print ("YOUR PHONE NUMBER IS : "+phone);
+		}
+		return 0;
+  }
+    public void setacc (long acc)
+  {
+    this.acc = acc;
+  }
+  public long getacc (long acc)
+  {
+      long a = 999999999;
+     System.out.println("\t\n");
+    System.out.print ("KINDLY ENTER THE ACCOUNT NUMBER : ");
+    acc = sc.nextLong ();
+    if(acc>(a*1000)+999)
+    {
+        System.out.println("TRY AGAIN");
+        System.out.print("ITS NOT A VALID ACCOUNT NUMBER : ");
+    }
+    else
+    {
+        System.out.println("\t\n");
+        System.out.println("\n");
+     System.out.println("DEAR CUSTOMER,");
+     System.out.println("ACCOUNT NUMBER IS CONFIRMED");
+    System.out.print ("YOUR ACCOUNT NUMBER IS : ");
+    }
+    return acc;
+    
+  }
+  public void setpin (int pin)
+  {
+    this.pin = pin;
+  }
+  public int getpin (int pin)
+  {
+           System.out.println("\t\n");
+    System.out.println ("ENTER THE PIN [4 DIGIT ]: ");
+	pin = sc.nextInt ();
+	System.out.print("YOUR PASSWORD IS : ");
+      return pin; 
+  }
+}
+class ATM 
+{
+    public void deposit()
+    {
+        Scanner sc = new Scanner(System.in);
+        float current =0;
+        System.out.println("KINDLY ENTER THE AMOUNT YOU WANT TO DEPOSIT IN THE ACCOUNT : ");
+        float dep = sc.nextFloat();
+        float total = current + dep;
+        System.out.println("DEAR CUSTOMER \nTHE TOTAL AMOUNT PRESENT IN YOUR ACCOUNT CURRENTLY IS "+total);
+        System.out.println("THANK YOU !");
+        System.out.println("\n");
+        System.out.println("enter 1 to withdraw the amount!\nenter 2 exit!!");
+        int a = sc.nextInt();
+        if(a==1)
+        {
+        float total1=0;
+        System.out.println("KINDLY ENTER THE AMOUNT YOU WANT TO WITHDRAW  : ");
+        float with = sc.nextFloat();
+        if(with <= dep)
+        {
+            System.out.println("KINDLY COLLECT YOUR CASH !");
+             total1 = dep - with;
+        System.out.println("THE TOTAL AMOUNT PRESENT IN YOUR ACCOUNT IS : "+total1);
+        System.out.println("THANK YOU !");
+        System.out.println("\n");
+        }
+        else
+        {
+            System.out.println("SORRY ! YOUR ACCOUNT HAS INSUFFICIENT AMOUNT!");
+            System.out.println("THANK YOU !");
+            System.out.println("\n");
+        }
+        
+    }
+    else
+    {
+            System.out.println("Thanks for the deposit!");
+    }
+    }
+    
+    public void exit()
+    {
+        System.out.println("DEAR CUSTOMER!");
+        System.out.println("YOU HAVE EXITED !");
+        System.out.println("VISIT AGAIN!");
+        System.out.println("\n");
+    }
+}
+
+public class Main
+{
+  public static void main (String[]args)
+  {
+    Scanner sc = new Scanner (System.in);
+    Login s1 = new bank ();
+    bank ss = new bank ();
+    ATM ob = new ATM();
+    
+	System.out.println(" **         **  ** ** ** **  **             ** **      **      ** **     ** **  ** ** ** ** ");
+	System.out.println(" **         **  **           **            **        **  **    **   **  **  **  **          ");
+	System.out.println(" **   **    **  ** ** **     **          **        **      **  **     **    **  ** ** **    ");
+	System.out.println(" **  ** **  **  ** ** **     **          **        **      **  **           **  ** ** **    ");
+	System.out.println(" ** **   ** **  **           **            **        **  **    **           **  **          ");
+	System.out.println(" **         **  ** ** ** **  ** ** ** **    ** **      **      **           **  ** ** ** ** ");
+	
+	System.out.println("\n");
+	System.out.println("\n");
+	
+	System.out.println(" \t \t \t \t** ** ** ** **      **      ");
+	System.out.println(" \t \t \t \t      **          **  **    ");
+	System.out.println(" \t \t \t \t      **        **      **  ");
+	System.out.println(" \t \t \t \t      **        **      **  ");
+	System.out.println(" \t \t \t \t      **          **  **    ");
+	System.out.println(" \t \t \t \t      **            **      ");
+	
+	System.out.println("\n");
+	System.out.println("\n");
+	
+	System.out.println(" ** ** ** **  ** ** ** ** **  **    **        ** **         ** **       ** **      **  **    **   ");
+	System.out.println(" **                     **    **   **         **   **      **   **      **  **     **  **   **    ");
+	System.out.println(" ** ** **            **       ** **           ** **       **     **     **   **    **  ** **      ");
+	System.out.println(" ** ** **          **         ** **           ** **      ** ** ** **    **    **   **  ** **      ");
+	System.out.println(" **              **           **   **         **   **   **         **   **     **  **  **   **    ");
+	System.out.println(" **           ** ** ** ** **  **    **        ** **    **           **  **      ** **  **     **  ");
+	System.out.println("\t");
+	
+    System.out.print("DEAR CUSTOMER\nKINDLY ENTER YOUR NAME : ");
+    ss.FZT(".");
+          s1.setphone (0);
+      s1.setacc (0);
+      s1.setpin (0);
+      System.out.println (s1.getphone (0));
+            System.out.println (s1.getacc (0));
+      System.out.println (s1.getpin (0));
+      {
+      System.out.println("DEAR CUSTOMER , WOULD YOU LIKE TO CHOOSE CURRENT OR SAVINGS ACCOUNT-");
+      System.out.println("KINDLY PRESS '1' FOR CURRENT ACCOUNT AND '2' FOR SAVINGS ACCOUNT !");
+        int one = sc.nextInt();
+        if(one == 1)
+        {
+            System.out.println("YOU HAVE CHOSEN CURRENT ACCOUNT!\nYOU MAY PROCEED FURTHER!");
+            System.out.println("\n");
+        }
+        else
+        {
+            System.out.println("YOU HAVE CHOSEN SAVINGS ACCOUNT!\nYOU MAY PROCEED FURTHER!");
+            System.out.println("\n");
+        }
+      }
+      int ch=0;
+      do
+      {
+        System.out.println("DEAR CUSTOMER! YOUR ACCOUNT HAS BEEN CREATED ");
+		System.out.println("DEPOSIT AMMOUNT FOR FURTHER PROCESS");
+		ob.deposit();
+		System.out.println("THE FOLLOWING OPERATIONS ARE DONE :");
+		System.out.println("1 - Deposit or WITHDRAWAL");
+	
+		System.out.println("2 - EXIT");
+		System.out.println("\n");
+		System.out.println("KINDLY ENTER THE OPERATION YOU WOULD LIKE TO CHOOSE : ");
+		int choose = sc.nextInt();
+		switch(choose)
+		{
+		    case 1 :
+		        ob.deposit();
+		        break;
+		        
+	
+		        
+		    case 2 :
+		        ob.exit();
+		        break;
+		        
+		    default :
+		        System.out.println("error");
+		        break;
+		        
+		    
+		}
+		System.out.println("ENTER 1 TO CONTINUE : ");
+		System.out.println("ENTER ANY DIGIT OTHER THAN 1 TO TERMINATE YOUR OPERATION!");
+		    ch = sc.nextInt();
+		    System.out.println("\n");
+      }while(ch==1);
+      
+      if(ch!=0)
+      {
+          System.out.println("YOU HAVE EXITED!");
+          System.out.println("THANK YOU!");
+      }
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
